@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Tambah Buah</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.5.2/css/bootstrap.min.css}" />
+</head>
+<body>
+<div class="container">
+    <h2 id="formTitle">Tambah Buah</h2>
+    <form id="fruitForm" th:object="${fruit}">
+        <div class="form-group">
+            <label for="name">Nama Buah</label>
+            <input type="text" class="form-control" id="name" th:field="*{name}" placeholder="Masukkan nama buah" required>
+            <input type="hidden" id="fruitId" th:field="*{id}" th:value="*{id}">
+        </div>
+        <div class="form-group">
+            <label for="description">Deskripsi</label>
+            <textarea class="form-control" id="description" th:field="*{description}" rows="3" placeholder="Masukkan deskripsi buah" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="stock">Stock</label>
+            <input type="number" class="form-control" id="stock" th:field="*{stock}" placeholder="Masukkan jumlah stok" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/4.5.2/js/bootstrap.min.js}"></script>
+<script>
+    $(document).ready(function() {
+        const fruitId = $('#fruitId').val();
+
+        if (fruitId !== null && fruitId !== '') {
+            $('#formTitle').text('Edit Buah');
+            $.ajax({
+                url: `/api/v1/fruits/${fruitId}`,
+                method: 'GET',
+                success: function(response) {
+                    $('#name').val(response.data.name);
+                    $('#description').val(response.data.description);
+                    $('#stock').val(response.data.stock);
+                },
+                error: function(xhr, status, error) {
+                    alert('Failed to load fruit data: ' + error);
+                }
+            });
+        }
+
+        $('#fruitForm').on('submit', function(event) {
+            event.preventDefault();
+            const fruitData = {
+                name: $('#name').val(),
+                description: $('#description').val(),
+                stock: $('#stock').val()
+            };
+
+            const method = fruitId !== null && fruitId !== '' ? 'PUT' : 'POST';
+            const url = fruitId !== null && fruitId !== '' ? `/api/v1/fruits/${fruitId}` : '/api/v1/fruits';
+
+            $.ajax({
+                url: url,
+                method: method,
+                contentType: 'application/json',
+                data: JSON.stringify(fruitData),
+                success: function(response) {
+                    window.location.href = '/fruits';
+                },
+                error: function(xhr, status, error) {
+                    alert('Failed to save fruit: ' + error);
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

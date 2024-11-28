@@ -1,0 +1,19 @@
+{
+  "code": 200,
+  "message": "OK",
+  "data": [
+    {
+      "id": "36fb13b4-2887-4737-b96f-9ac48d1ccbea",
+      "name": "kopi",
+      "description": "kopi",
+      "stock": 10,
+      "createdAt": "2024-09-11T07:45:10.263501",
+      "updatedAt": "2024-09-11T07:45:10.263501",
+      "deletedAt": null
+    }
+  ],
+  "currentPage": 1,
+  "currentSize": 1,
+  "totalPages": 1,
+  "totalItems": 1
+}

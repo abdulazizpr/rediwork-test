@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>List Buah-Buahan</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.5.2/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/webjars/datatables/1.10.21/css/jquery.dataTables.min.css}" />
+    <link rel="stylesheet" th:href="@{/webjars/datatables-responsive/2.2.5/css/responsive.dataTables.min.css}" />
+    <script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>
+    <script th:src="@{/webjars/datatables/1.10.21/js/jquery.dataTables.min.js}"></script>
+    <script th:src="@{/webjars/datatables-responsive/2.2.5/js/dataTables.responsive.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/4.5.2/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<div class="container">
+    <h2>List Buah-Buahan</h2>
+    <button id="addFruitBtn" class="btn btn-primary mb-3" onclick="window.location.href='/fruits/create'">Tambah Buah</button>
+    <table id="fruitsTable" class="table table-striped table-bordered dt-responsive nowrap">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Stock</th>
+            <th>Created At</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Data will be populated by AJAX -->
+        </tbody>
+    </table>
+</div>
+<script>
+    $(document).ready(function() {
+
+        $('#fruitsTable').DataTable({
+            "serverSide": true,
+            "paging": true,
+            "searching": true,
+            "info": false,
+            "pageLength": 5,
+            "lengthMenu": [5, 10, 25, 50],
+            "ordering": false,
+            "responsive": true,
+            "ajax": function(data, callback, settings) {
+                let page = (data.start / data.length) + 1;
+                let size = data.length;
+                let search = data.search.value;
+
+                $.ajax({
+                    url: `/api/v1/fruits?page=${page}&size=${size}&name=${search}`,
+                    method: 'GET',
+                    success: function(response) {
+                        callback({
+                            draw: data.draw,
+                            recordsTotal: response.totalItems,
+                            recordsFiltered: response.totalItems,
+                            data: response.data
+                        });
+                    }
+                });
+            },
+            "columns": [
+                { "data": "name" },
+                { "data": "stock" },
+                {
+                    "data": "createdAt",
+                    "render": function(data, type, row) {
+                        return formatDate(data);
+                    }
+                },
+                {
+                    "data": "id",
+                    "render": function(data, type, row) {
+                        return `
+                            <button class="btn btn-success" onclick="window.location.href='/fruits/${data}/edit'">Edit</button>
+                            <button class="btn btn-danger" onclick="deleteFruit('${data}')">Delete</button>`;
+                    }
+                }
+            ]
+        });
+    });
+
+    function formatDate(dateString) {
+        const date = new Date(dateString);
+        const options = {
+            day: '2-digit',
+            month: 'long',
+            year: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        };
+
+        return date.toLocaleString('id-ID', options).replace(/\./g, ':').replace(' pukul ', ' ');
+    }
+
+    function deleteFruit(id) {
+        if (confirm('Are you sure you want to delete this fruit?')) {
+            $.ajax({
+                url: `/api/v1/fruits/${id}`,
+                method: 'DELETE',
+                success: function(response) {
+                    alert('Fruit deleted successfully');
+                    $('#fruitsTable').DataTable().ajax.reload();
+                },
+                error: function(xhr, status, error) {
+                    alert('Failed to delete fruit: ' + error);
+                }
+            });
+        }
+    }
+</script>
+</body>
+</html>

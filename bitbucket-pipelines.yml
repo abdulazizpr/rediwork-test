@@ -1,0 +1,62 @@
+image: maven:3.8.1-openjdk-17
+
+pipelines:
+  default:
+    - step:
+        name: Build and Cache Artifacts
+        caches:
+          - maven
+        services:
+          - postgres
+        script:
+          - mvn clean install -DskipTests
+          - cd astra-coding-migration/
+          - mvn flyway:migrate -P flyway
+          - cd ../
+          - mvn package -DskipTests
+        artifacts:
+          - target/**
+
+    - step:
+        name: Integration Testing
+        caches:
+          - maven
+        services:
+          - postgres
+        script:
+          - mvn clean install -DskipTests
+          - cd astra-coding-migration/
+          - mvn flyway:migrate -P flyway
+          - cd ../
+          - mvn test -Ptest
+        artifacts:
+          - target/**
+
+    - step:
+        name: Security Scan
+        caches:
+          - maven
+        script:
+          # Run a security scan for sensitive data.
+          # See more security tools at https://bitbucket.org/product/features/pipelines/integrations?&category=security
+          - pipe: atlassian/git-secrets-scan:0.5.1
+
+    - step:
+        name: Drop All Database After Scanning and Testing
+        image: postgres:13
+        services:
+          - postgres
+        script:
+          - psql -h localhost -U postgres -c "DROP DATABASE IF EXISTS chart_tick;"
+
+definitions:
+  caches:
+    maven: ~/.m2/repository
+
+  services:
+    postgres:
+      image: postgres:13
+      environment:
+        POSTGRES_DB: 'astra-coding'
+        POSTGRES_USER: 'postgres'
+        POSTGRES_PASSWORD: 'postgres'

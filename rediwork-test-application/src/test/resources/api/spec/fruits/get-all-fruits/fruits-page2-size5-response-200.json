@@ -1,0 +1,55 @@
+{
+  "code": 200,
+  "message": "OK",
+  "data": [
+    {
+      "id": "8a6c5672-92c1-47be-99a3-8848e3677904",
+      "name": "kiwi",
+      "description": "kiwi",
+      "stock": 10,
+      "createdAt": "2024-09-11T07:44:12.945968",
+      "updatedAt": "2024-09-11T07:44:12.945968",
+      "deletedAt": null
+    },
+    {
+      "id": "d2cd17ef-f36a-4a32-b73b-efeb354242fa",
+      "name": "pepaya",
+      "description": "pepaya",
+      "stock": 10,
+      "createdAt": "2024-09-11T07:43:41.466479",
+      "updatedAt": "2024-09-11T07:43:41.466479",
+      "deletedAt": null
+    },
+    {
+      "id": "8914d235-9c03-4646-b104-73b99f9de641",
+      "name": "tomat",
+      "description": "tomat",
+      "stock": 10,
+      "createdAt": "2024-09-11T07:42:36.280363",
+      "updatedAt": "2024-09-11T07:42:36.280363",
+      "deletedAt": null
+    },
+    {
+      "id": "f79edd58-d905-4f54-8afa-b372d2245e2e",
+      "name": "keju",
+      "description": "keju",
+      "stock": 10,
+      "createdAt": "2024-09-11T07:42:18.414672",
+      "updatedAt": "2024-09-11T07:42:18.414672",
+      "deletedAt": null
+    },
+    {
+      "id": "4a57f029-b523-4c43-9e59-44705694e14a",
+      "name": "pisang",
+      "description": "pisang",
+      "stock": 10,
+      "createdAt": "2024-09-11T07:42:11.158245",
+      "updatedAt": "2024-09-11T07:42:11.158245",
+      "deletedAt": null
+    }
+  ],
+  "currentPage": 2,
+  "currentSize": 5,
+  "totalPages": 3,
+  "totalItems": 13
+}

@@ -1,0 +1,55 @@
+{
+  "code": 200,
+  "message": "OK",
+  "data": [
+    {
+      "id": "3e23413e-4f5e-441f-a9cf-8731cfc1c576",
+      "name": "kecap",
+      "description": "kecap",
+      "stock": 10,
+      "createdAt": "2024-09-11T07:45:56.341884",
+      "updatedAt": "2024-09-11T07:45:56.341884",
+      "deletedAt": null
+    },
+    {
+      "id": "118105bc-73ed-4e0d-8203-5db80699b98f",
+      "name": "saus",
+      "description": "saus",
+      "stock": 10,
+      "createdAt": "2024-09-11T07:45:35.766696",
+      "updatedAt": "2024-09-11T07:45:35.766696",
+      "deletedAt": null
+    },
+    {
+      "id": "36fb13b4-2887-4737-b96f-9ac48d1ccbea",
+      "name": "kopi",
+      "description": "kopi",
+      "stock": 10,
+      "createdAt": "2024-09-11T07:45:10.263501",
+      "updatedAt": "2024-09-11T07:45:10.263501",
+      "deletedAt": null
+    },
+    {
+      "id": "311cc867-4d30-4699-b91b-66b868b1598b",
+      "name": "salam",
+      "description": "salam",
+      "stock": 10,
+      "createdAt": "2024-09-11T07:44:57.772662",
+      "updatedAt": "2024-09-11T07:44:57.772662",
+      "deletedAt": null
+    },
+    {
+      "id": "d6ab05d1-44f5-4997-aedf-d933c3e09e60",
+      "name": "timun",
+      "description": "timun",
+      "stock": 10,
+      "createdAt": "2024-09-11T07:44:38.313105",
+      "updatedAt": "2024-09-11T07:44:38.313105",
+      "deletedAt": null
+    }
+  ],
+  "currentPage": 1,
+  "currentSize": 5,
+  "totalPages": 3,
+  "totalItems": 13
+}

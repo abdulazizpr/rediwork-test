@@ -1,0 +1,119 @@
+[
+  {
+    "id": "c641e63f-fd16-48a2-9db9-7b0699f9cdff",
+    "name": "manga",
+    "description": "manga",
+    "stock": 10,
+    "createdAt": "2024-09-11T07:39:56.650093",
+    "updatedAt": "2024-09-11T07:39:56.650093",
+    "deletedAt": null
+  },
+  {
+    "id": "545910cb-ef5e-4ce7-91d2-5b802825ba85",
+    "name": "apel",
+    "description": "apel",
+    "stock": 10,
+    "createdAt": "2024-09-11T07:40:02.769367",
+    "updatedAt": "2024-09-11T07:40:02.769367",
+    "deletedAt": null
+  },
+  {
+    "id": "015f6fc0-bd68-4895-ba8c-c5046d953fe6",
+    "name": "melon",
+    "description": "melon",
+    "stock": 10,
+    "createdAt": "2024-09-11T07:40:11.695063",
+    "updatedAt": "2024-09-11T07:40:11.695063",
+    "deletedAt": null
+  },
+  {
+    "id": "4a57f029-b523-4c43-9e59-44705694e14a",
+    "name": "pisang",
+    "description": "pisang",
+    "stock": 10,
+    "createdAt": "2024-09-11T07:42:11.158245",
+    "updatedAt": "2024-09-11T07:42:11.158245",
+    "deletedAt": null
+  },
+  {
+    "id": "f79edd58-d905-4f54-8afa-b372d2245e2e",
+    "name": "keju",
+    "description": "keju",
+    "stock": 10,
+    "createdAt": "2024-09-11T07:42:18.414672",
+    "updatedAt": "2024-09-11T07:42:18.414672",
+    "deletedAt": null
+  },
+  {
+    "id": "8914d235-9c03-4646-b104-73b99f9de641",
+    "name": "tomat",
+    "description": "tomat",
+    "stock": 10,
+    "createdAt": "2024-09-11T07:42:36.280363",
+    "updatedAt": "2024-09-11T07:42:36.280363",
+    "deletedAt": null
+  },
+  {
+    "id": "d2cd17ef-f36a-4a32-b73b-efeb354242fa",
+    "name": "pepaya",
+    "description": "pepaya",
+    "stock": 10,
+    "createdAt": "2024-09-11T07:43:41.466479",
+    "updatedAt": "2024-09-11T07:43:41.466479",
+    "deletedAt": null
+  },
+  {
+    "id": "8a6c5672-92c1-47be-99a3-8848e3677904",
+    "name": "kiwi",
+    "description": "kiwi",
+    "stock": 10,
+    "createdAt": "2024-09-11T07:44:12.945968",
+    "updatedAt": "2024-09-11T07:44:12.945968",
+    "deletedAt": null
+  },
+  {
+    "id": "d6ab05d1-44f5-4997-aedf-d933c3e09e60",
+    "name": "timun",
+    "description": "timun",
+    "stock": 10,
+    "createdAt": "2024-09-11T07:44:38.313105",
+    "updatedAt": "2024-09-11T07:44:38.313105",
+    "deletedAt": null
+  },
+  {
+    "id": "311cc867-4d30-4699-b91b-66b868b1598b",
+    "name": "salam",
+    "description": "salam",
+    "stock": 10,
+    "createdAt": "2024-09-11T07:44:57.772662",
+    "updatedAt": "2024-09-11T07:44:57.772662",
+    "deletedAt": null
+  },
+  {
+    "id": "36fb13b4-2887-4737-b96f-9ac48d1ccbea",
+    "name": "kopi",
+    "description": "kopi",
+    "stock": 10,
+    "createdAt": "2024-09-11T07:45:10.263501",
+    "updatedAt": "2024-09-11T07:45:10.263501",
+    "deletedAt": null
+  },
+  {
+    "id": "118105bc-73ed-4e0d-8203-5db80699b98f",
+    "name": "saus",
+    "description": "saus",
+    "stock": 10,
+    "createdAt": "2024-09-11T07:45:35.766696",
+    "updatedAt": "2024-09-11T07:45:35.766696",
+    "deletedAt": null
+  },
+  {
+    "id": "3e23413e-4f5e-441f-a9cf-8731cfc1c576",
+    "name": "kecap",
+    "description": "kecap",
+    "stock": 10,
+    "createdAt": "2024-09-11T07:45:56.341884",
+    "updatedAt": "2024-09-11T07:45:56.341884",
+    "deletedAt": null
+  }
+]
