@@ -1,5 +1,7 @@
 # Rediwork Test Project
 
+This project is a test project for Rediwork. The project is a simple CRUD application for managing fruits.
+
 ## Requirements:
 * Java 17 
 * Maven 3.6.3
